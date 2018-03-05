@@ -19,4 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('account.urls')),
+    
+    # restore password urls
+    url(r'^password-reset/$', 'django.contrib.auth.views.password_reset', name='password_reset'),
+    url(r'^password-reset/done/$', 'django.contrib.auth.views.password_reset_done', name='password_reset_done'),
 ]
