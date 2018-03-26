@@ -21,7 +21,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('account.urls')),
-    
+    url(r'^images/', include('images.urls', namespace='images')),
+    # python-social-auth
+    url('social-auth/', include('social.apps.django_app.urls', namespace='social')),
+
     # restore password urls
     url(r'^password-reset/$', 'django.contrib.auth.views.password_reset', name='password_reset'),
     url(r'^password-reset/done/$', 'django.contrib.auth.views.password_reset_done', name='password_reset_done'),

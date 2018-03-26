@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
+    'social.apps.django_app.default',
+    'images',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,3 +122,21 @@ EMAIL_HOST_USER = 'XXXX@gmail.com'
 EMAIL_HOST_PASSWORD = 'XXXX'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.Facebook2OAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '180311292591633'
+SOCIAL_AUTH_FACEBOOK_SECRET = '480cc0637d665a736b45c69732ea9253'
+
+SOCIAL_AUTH_TWITTER_KEY = 'XrKllmHyr9eE1nto1Rbkt2wbT'
+SOCIAL_AUTH_TWITTER_SECRET = '22tcOT4yfgUqbtUi8cNxlowwkBCOb3mOnHuAwS0Squ94c50M7e'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
